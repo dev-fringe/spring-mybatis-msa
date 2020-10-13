@@ -1,0 +1,18 @@
+0. you need java 14 - JEP-355 Text Blocks 
+1.run database that file run at "hsqldb/bin/runServer.bat"
+2.run database manager that file run at "hsqldb/bin/runManager.bat"
+3. execute queries below
+"""
+CREATE TABLE t (i INT, v VARCHAR(25), d DATE);
+INSERT INTO t(i, v, d) VALUES (1, 'one two three', null);
+INSERT INTO t(i, v, d) VALUES (2, null, '2007-06-24');
+INSERT INTO t(i, v, d) VALUES (3, 'one,two,,three', '2007-06-24');
+INSERT INTO t(i, v, d) VALUES (4, '"one"two""three', '2007-06-24');
+INSERT INTO t(i, v, d) VALUES (5, '"one,two"three,', '2007-06-24');
+INSERT INTO t(i, v, d) VALUES (6, '', '2007-06-24');
+"""
+4. run application log 
+15:58:49.255 [main] INFO jdbc.sqlonly - SQL         :  SELECT
+	*
+  FROM T
+  
